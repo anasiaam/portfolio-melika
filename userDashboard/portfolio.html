@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Work — MELIKA HAGHIGHAT</title>
+    <link rel="stylesheet" href="../assets/css/portfolio_style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ==================== NAVBAR ==================== -->
+<header class="navbar" id="navbar">
+    <div class="navbar__inner">
+        <a href="../index.html" class="navbar__logo">MELIKA HAGHIGHAT</a>
+        <nav class="navbar__nav" aria-label="Primary navigation">
+            <a href="../index.html" class="navbar__link">Home</a>
+            <a href="portfolio.html" class="navbar__link navbar__link--active">Work</a>
+            <a href="about.html" class="navbar__link">About</a>
+            <a href="contact.html" class="navbar__link">Contact</a>
+        </nav>
+        <button class="navbar__burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    <div class="navbar__mobile" id="mobileMenu" aria-hidden="true">
+        <a href="../index.html" class="navbar__mobile-link">Home</a>
+        <a href="portfolio.html" class="navbar__mobile-link">Work</a>
+        <a href="about.html" class="navbar__mobile-link">About</a>
+        <a href="contact.html" class="navbar__mobile-link">Contact</a>
+    </div>
+</header>
+
+<main>
+
+    <!-- ==================== PAGE HEADER ==================== -->
+    <section class="page-header">
+        <div class="page-header__inner">
+            <div class="page-header__meta fade-in fade-in--delay-1">
+                <span class="page-header__tag">Portfolio</span>
+                <span class="page-header__rule" aria-hidden="true"></span>
+            </div>
+            <h1 class="page-header__title fade-in fade-in--delay-2">
+                Selected<br /><em>Work</em>
+            </h1>
+            <p class="page-header__subtitle fade-in fade-in--delay-3">
+                A collection of campaigns, identities,<br />and concepts built with intention.
+            </p>
+        </div>
+        <div class="page-header__index fade-in fade-in--delay-3" aria-hidden="true">
+            <span>12</span>
+            <span class="page-header__index-label">Projects</span>
+        </div>
+    </section>
+
+    <!-- ==================== FILTER NAV ==================== -->
+    <nav class="filter" aria-label="Filter projects by category">
+        <div class="filter__inner">
+            <button class="filter__btn filter__btn--active" data-filter="all">All</button>
+            <button class="filter__btn" data-filter="digital">Digital Marketing</button>
+            <button class="filter__btn" data-filter="social">Social Media</button>
+            <button class="filter__btn" data-filter="branding">Branding &amp; Creative</button>
+        </div>
+    </nav>
+
+    <!-- ==================== PORTFOLIO GRID ==================== -->
+    <section class="portfolio" aria-label="Portfolio projects">
+        <div class="portfolio__grid">
+
+            <!-- ROW 1 — Digital Marketing (featured, full-width) -->
+            <article class="pcard pcard--hero reveal" data-category="digital">
+                <div class="pcard__link" aria-label="View NOOR Beauty Launch Campaign">
+                    <div class="pcard__img-wrap">
+                        <img
+                                src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=1400&q=80&auto=format&fit=crop"
+                                alt="NOOR Beauty — Digital launch campaign"
+                                class="pcard__img"
+                                loading="lazy"
+                        />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Digital Marketing</span>
+                            <h2 class="pcard__title">NOOR Beauty Launch</h2>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ROW 2 — two equal columns -->
+            <article class="pcard pcard--half reveal" data-category="social">
+                <div class="pcard__link" aria-label="View ATELIER SOL Social Media project">
+                    <div class="pcard__img-wrap">
+                        <img
+                                src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80&auto=format&fit=crop"
+                                alt="ATELIER SOL — Social media content"
+                                class="pcard__img"
+                                loading="lazy"
+                        />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Social Media</span>
+                            <h2 class="pcard__title">ATELIER SOL</h2>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="pcard pcard--half reveal reveal--delay-1" data-category="branding">
+                <div class="pcard__link" aria-label="View VELA Skincare Brand Identity">
+                    <div class="pcard__img-wrap">
+                        <img
+                                src="https://images.unsplash.com/photo-1612817288484-6f916006741a?w=800&q=80&auto=format&fit=crop"
+                                alt="VELA Skincare — Brand identity"
+                                class="pcard__img"
+                                loading="lazy"
+                        />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Branding &amp; Creative</span>
+                            <h2 class="pcard__title">VELA Skincare</h2>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ROW 3 — asymmetric: 2/3 + 1/3 -->
+            <article class="pcard pcard--wide reveal" data-category="digital">
+                <div class="pcard__link" aria-label="View FORMA Fashion paid media campaign">
+                    <div class="pcard__img-wrap">
+                        <img
+                                src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1100&q=80&auto=format&fit=crop"
+                                alt="FORMA — Paid media campaign"
+                                class="pcard__img"
+                                loading="lazy"
+                        />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Digital Marketing</span>
+                            <h2 class="pcard__title">FORMA — Paid Media</h2>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="pcard pcard--narrow reveal reveal--delay-1" data-category="branding">
+                <div class="pcard__link" aria-label="View PERSONA Cards concept">
+                    <div class="pcard__img-wrap">
+                        <img
+                                src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=600&q=80&auto=format&fit=crop"
+                                alt="Persona Cards — Brand concept"
+                                class="pcard__img"
+                                loading="lazy"
+                        />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Branding &amp; Creative</span>
+                            <h2 class="pcard__title">Persona Cards</h2>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ROW 4 — three equal columns -->
+            <article class="pcard pcard--third reveal" data-category="social">
+                <div class="pcard__link" aria-label="View MAISON ÉCLAT Instagram content">
+                    <div class="pcard__img-wrap">
+                        <img
+                                src="https://images.unsplash.com/photo-1524135220673-c731600a1a50?w=600&q=80&auto=format&fit=crop"
+                                alt="MAISON ÉCLAT — Instagram content"
+                                class="pcard__img"
+                                loading="lazy"
+                        />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Social Media</span>
+                            <h2 class="pcard__title">MAISON ÉCLAT</h2>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="pcard pcard--third reveal reveal--delay-1" data-category="branding">
+                <div class="pcard__link" aria-label="View STUDIO CLARO event concept">
+                    <div class="pcard__img-wrap">
+                        <img
+                                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80&auto=format&fit=crop"
+                                alt="STUDIO CLARO — Event concept"
+                                class="pcard__img"
+                                loading="lazy"
+                        />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Branding &amp; Creative</span>
+                            <h2 class="pcard__title">STUDIO CLARO Event</h2>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="pcard pcard--third reveal reveal--delay-2" data-category="digital">
+                <div class="pcard__link" aria-label="View BLANC email marketing">
+                    <div class="pcard__img-wrap">
+                        <img
+                                src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=600&q=80&auto=format&fit=crop"
+                                alt="BLANC — Email marketing"
+                                class="pcard__img"
+                                loading="lazy"
+                        />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Digital Marketing</span>
+                            <h2 class="pcard__title">BLANC — Email</h2>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ROW 5 — asymmetric: 1/3 + 2/3 -->
+            <article class="pcard pcard--narrow reveal" data-category="social">
+                <div class="pcard__link" aria-label="View RÊVE TikTok Strategy">
+                    <div class="pcard__img-wrap">
+                        <img
+                                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80&auto=format&fit=crop"
+                                alt="RÊVE — TikTok strategy"
+                                class="pcard__img"
+                                loading="lazy"
+                        />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Social Media</span>
+                            <h2 class="pcard__title">RÊVE TikTok</h2>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="pcard pcard--wide reveal reveal--delay-1" data-category="branding">
+                <div class="pcard__link" aria-label="View LUMIÈRE Brand Rebrand">
+                    <div class="pcard__img-wrap">
+                        <img
+                                src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1100&q=80&auto=format&fit=crop"
+                                alt="LUMIÈRE — Brand rebrand"
+                                class="pcard__img"
+                                loading="lazy"
+                        />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Branding &amp; Creative</span>
+                            <h2 class="pcard__title">LUMIÈRE Rebrand</h2>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ROW 6 — two equal columns -->
+            <article class="pcard pcard--half reveal" data-category="digital">
+                <div class="pcard__link" aria-label="View SOLÈNE SEO and Content Strategy">
+                    <div class="pcard__img-wrap">
+                        <img
+                                src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&q=80&auto=format&fit=crop"
+                                alt="SOLÈNE — SEO and content strategy"
+                                class="pcard__img"
+                                loading="lazy"
+                        />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Digital Marketing</span>
+                            <h2 class="pcard__title">SOLÈNE — SEO &amp; Content</h2>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="pcard pcard--half reveal reveal--delay-1" data-category="social">
+                <div class="pcard__link" aria-label="View NOIR Social Campaign">
+                    <div class="pcard__img-wrap">
+                        <img
+                                src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=80&auto=format&fit=crop"
+                                alt="NOIR — Social campaign"
+                                class="pcard__img"
+                                loading="lazy"
+                        />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Social Media</span>
+                            <h2 class="pcard__title">NOIR Campaign</h2>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer" aria-label="Footer">
+    <div class="footer__inner">
+        <p class="footer__copy">&copy; 2026 MELIKA HAGHIGHAT. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    (function () {
+        'use strict';
+
+        // --- Navbar scroll ---
+        const navbar = document.getElementById('navbar');
+        let ticking = false;
+        window.addEventListener('scroll', function () {
+            if (!ticking) {
+                window.requestAnimationFrame(function () {
+                    navbar.classList.toggle('navbar--scrolled', window.scrollY > 60);
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        // --- Mobile menu ---
+        const burgerBtn = document.getElementById('burgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        burgerBtn.addEventListener('click', function () {
+            const isOpen = mobileMenu.classList.toggle('navbar__mobile--open');
+            burgerBtn.setAttribute('aria-expanded', isOpen);
+            mobileMenu.setAttribute('aria-hidden', !isOpen);
+            burgerBtn.classList.toggle('navbar__burger--open', isOpen);
+            document.body.classList.toggle('body--menu-open', isOpen);
+        });
+
+        mobileMenu.querySelectorAll('.navbar__mobile-link').forEach(function (link) {
+            link.addEventListener('click', function () {
+                mobileMenu.classList.remove('navbar__mobile--open');
+                burgerBtn.setAttribute('aria-expanded', 'false');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                burgerBtn.classList.remove('navbar__burger--open');
+                document.body.classList.remove('body--menu-open');
+            });
+        });
+
+        // --- Filter ---
+        const filterBtns = document.querySelectorAll('.filter__btn');
+        const cards = document.querySelectorAll('.pcard');
+
+        filterBtns.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                const filter = btn.getAttribute('data-filter');
+
+                // Update active button
+                filterBtns.forEach(function (b) { b.classList.remove('filter__btn--active'); });
+                btn.classList.add('filter__btn--active');
+
+                // Show/hide cards
+                cards.forEach(function (card) {
+                    const match = filter === 'all' || card.getAttribute('data-category') === filter;
+                    if (match) {
+                        card.classList.remove('pcard--hidden');
+                        card.classList.add('pcard--visible');
+                    } else {
+                        card.classList.add('pcard--hidden');
+                        card.classList.remove('pcard--visible');
+                    }
+                });
+            });
+        });
+
+        // --- Scroll reveal ---
+        const revealEls = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+            revealEls.forEach(function (el) { observer.observe(el); });
+        } else {
+            revealEls.forEach(function (el) { el.classList.add('revealed'); });
+        }
+
+    })();
+</script>
+
+</body>
+</html>

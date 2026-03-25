@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — MELIKA HAGHIGHAT</title>
+    <link rel="stylesheet" href="../assets/css/contact_style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ==================== NAVBAR ==================== -->
+<header class="navbar" id="navbar">
+    <div class="navbar__inner">
+        <a href="../index.html" class="navbar__logo">
+            <img
+                    src="../assets/images/logo.png"
+                    alt=""
+                    class="navbar__logo-img"
+                    aria-hidden="true"
+            />
+            MELIKA HAGHIGHAT
+        </a>
+        <nav class="navbar__nav" aria-label="Primary navigation">
+            <a href="../index.html" class="navbar__link">Home</a>
+            <a href="portfolio.html" class="navbar__link">Work</a>
+            <a href="about.html" class="navbar__link">About</a>
+            <a href="contact.html" class="navbar__link navbar__link--active">Contact</a>
+        </nav>
+        <button class="navbar__burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    <div class="navbar__mobile" id="mobileMenu" aria-hidden="true">
+        <a href="../index.html" class="navbar__mobile-link">Home</a>
+        <a href="portfolio.html" class="navbar__mobile-link">Work</a>
+        <a href="about.html" class="navbar__mobile-link">About</a>
+        <a href="contact.html" class="navbar__mobile-link">Contact</a>
+    </div>
+</header>
+
+<main>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="contact" aria-label="Contact">
+        <div class="contact__inner">
+
+            <div class="contact__meta fade-in fade-in--delay-1">
+                <span class="contact__label">Contact</span>
+                <span class="contact__rule" aria-hidden="true"></span>
+            </div>
+
+            <h1 class="contact__headline fade-in fade-in--delay-2">
+                Get in touch
+            </h1>
+
+            <div class="contact__links fade-in fade-in--delay-3">
+
+                <!-- Email row -->
+                <a href="mailto:melika.intel@gmail.com" class="contact__link" aria-label="Send Melika an email">
+                    <div class="contact__link-label-wrap">
+                        <!-- Email SVG -->
+                        <svg class="contact__link-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                            <path d="M2 7l10 7 10-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="contact__link-label">Email</span>
+                    </div>
+                    <span class="contact__link-value">melika.intel@gmail.com</span>
+                    <span class="contact__link-arrow" aria-hidden="true">↗</span>
+                </a>
+
+                <!-- LinkedIn row -->
+                <a href="https://linkedin.com/in/melikahaghighat" class="contact__link contact__link--linkedin" target="_blank" rel="noopener noreferrer" aria-label="View Melika Haghighat's LinkedIn profile — opens in new tab">
+                    <div class="contact__link-label-wrap">
+                        <!-- LinkedIn SVG -->
+                        <svg class="contact__link-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                            <path d="M7 10v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="7" cy="7.5" r="1" fill="currentColor"/>
+                            <path d="M11 10v7m0-4c0-2 1-3 3-3s3 1 3 3v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="contact__link-label">LinkedIn</span>
+                    </div>
+                    <span class="contact__link-value">
+                        Melika Haghighat
+                        <span class="contact__link-badge">View Profile</span>
+                    </span>
+                    <span class="contact__link-arrow" aria-hidden="true">↗</span>
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer" aria-label="Footer">
+    <div class="footer__inner">
+        <p class="footer__copy">&copy; 2026 MELIKA HAGHIGHAT. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    (function () {
+        'use strict';
+
+        const navbar = document.getElementById('navbar');
+        let ticking = false;
+        window.addEventListener('scroll', function () {
+            if (!ticking) {
+                window.requestAnimationFrame(function () {
+                    navbar.classList.toggle('navbar--scrolled', window.scrollY > 60);
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        const burgerBtn = document.getElementById('burgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        burgerBtn.addEventListener('click', function () {
+            const isOpen = mobileMenu.classList.toggle('navbar__mobile--open');
+            burgerBtn.setAttribute('aria-expanded', isOpen);
+            mobileMenu.setAttribute('aria-hidden', !isOpen);
+            burgerBtn.classList.toggle('navbar__burger--open', isOpen);
+            document.body.classList.toggle('body--menu-open', isOpen);
+        });
+
+        mobileMenu.querySelectorAll('.navbar__mobile-link').forEach(function (link) {
+            link.addEventListener('click', function () {
+                mobileMenu.classList.remove('navbar__mobile--open');
+                burgerBtn.setAttribute('aria-expanded', 'false');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                burgerBtn.classList.remove('navbar__burger--open');
+                document.body.classList.remove('body--menu-open');
+            });
+        });
+
+    })();
+</script>
+
+</body>
+</html>

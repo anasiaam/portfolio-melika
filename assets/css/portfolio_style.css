@@ -1,0 +1,829 @@
+/* ============================================================
+   MELIKA HAGHIGHAT — PORTFOLIO PAGE
+   Aesthetic: 90s CK Editorial  |  Inherits design language
+   ============================================================ */
+
+/* ============================================================
+   0. CUSTOM PROPERTIES
+   ============================================================ */
+:root {
+    --color-bg:        #FAFAF8;
+    --color-surface:   #F2F1EF;
+    --color-ink:       #0C0C0B;
+    --color-mid:       #6B6B68;
+    --color-subtle:    #B8B7B4;
+    --color-hairline:  #E0DFD9;
+    --color-white:     #FFFFFF;
+
+    --font-serif:      'Cormorant Garamond', 'Times New Roman', serif;
+    --font-sans:       'Jost', 'Helvetica Neue', Arial, sans-serif;
+
+    --space-sm:  1rem;
+    --space-md:  2rem;
+    --space-lg:  3rem;
+    --space-xl:  5rem;
+    --space-2xl: 7rem;
+
+    --ease-out:  cubic-bezier(0.22, 1, 0.36, 1);
+    --duration:  0.45s;
+
+    --max-width: 1280px;
+    --gutter:    clamp(1.5rem, 5vw, 5rem);
+
+    /* Grid gap — unifying all grid spacing */
+    --grid-gap:  2px;
+}
+
+
+/* ============================================================
+   1. RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans), Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body.body--menu-open {
+    overflow: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul { list-style: none; }
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+}
+
+
+/* ============================================================
+   2. UTILITY
+   ============================================================ */
+.section-label {
+    display: inline-block;
+    font-family: var(--font-sans), Arial, sans-serif;
+    font-size: 0.625rem;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-mid);
+    margin-bottom: 1.5rem;
+}
+
+
+/* ============================================================
+   3. ANIMATIONS
+   ============================================================ */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out);
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal--delay-1 { transition-delay: 0.10s; }
+.reveal--delay-2 { transition-delay: 0.20s; }
+.reveal--delay-3 { transition-delay: 0.30s; }
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: fadeUp 0.9s var(--ease-out) forwards;
+}
+
+.fade-in--delay-1 { animation-delay: 0.25s; }
+.fade-in--delay-2 { animation-delay: 0.45s; }
+.fade-in--delay-3 { animation-delay: 0.65s; }
+
+@keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ============================================================
+   4. NAVBAR  (identical to homepage)
+   ============================================================ */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 2rem var(--gutter);
+    transition: background-color var(--duration) var(--ease-out),
+    padding var(--duration) var(--ease-out),
+    backdrop-filter var(--duration) var(--ease-out);
+}
+
+.navbar--scrolled {
+    background-color: rgba(250, 250, 248, 0.88);
+    backdrop-filter: blur(14px) saturate(120%);
+    -webkit-backdrop-filter: blur(14px) saturate(120%);
+    padding-top: 1.1rem;
+    padding-bottom: 1.1rem;
+    border-bottom: 1px solid var(--color-hairline);
+}
+
+.navbar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.navbar__logo {
+    font-family: var(--font-sans), Arial, sans-serif;
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--color-ink);
+    flex-shrink: 0;
+}
+
+.navbar__nav {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.navbar__link {
+    font-family: var(--font-sans), Arial, sans-serif;
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-ink);
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.navbar__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--color-ink);
+    transition: width var(--duration) var(--ease-out);
+}
+
+.navbar__link:hover::after,
+.navbar__link--active::after {
+    width: 100%;
+}
+
+/* Burger */
+.navbar__burger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    width: 24px;
+    padding: 4px 0;
+    z-index: 110;
+}
+
+.navbar__burger span {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: var(--color-ink);
+    transition: transform var(--duration) var(--ease-out),
+    opacity var(--duration) var(--ease-out);
+    transform-origin: center;
+}
+
+.navbar__burger--open span:first-child {
+    transform: translateY(3.5px) rotate(45deg);
+}
+
+.navbar__burger--open span:last-child {
+    transform: translateY(-3.5px) rotate(-45deg);
+}
+
+/* Mobile menu */
+.navbar__mobile {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--color-bg);
+    z-index: 99;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--duration) var(--ease-out);
+}
+
+.navbar__mobile.navbar__mobile--open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.navbar__mobile-link {
+    font-family: var(--font-serif), serif;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    color: var(--color-ink);
+    transition: color var(--duration) var(--ease-out);
+}
+
+.navbar__mobile-link:hover {
+    color: var(--color-mid);
+}
+
+
+/* ============================================================
+   5. PAGE HEADER
+   ============================================================ */
+.page-header {
+    padding: 18vh var(--gutter) 6rem;
+    position: relative;
+    background-color: var(--color-bg);
+    overflow: hidden;
+}
+
+/* Vertical decorative rule */
+.page-header::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    right: var(--gutter);
+    width: 1px;
+    height: 28vh;
+    background: linear-gradient(to bottom, transparent, var(--color-hairline), transparent);
+    opacity: 0.7;
+}
+
+.page-header__inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.page-header__meta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.page-header__tag {
+    font-family: var(--font-sans), Arial, sans-serif;
+    font-size: 0.6rem;
+    font-weight: 400;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--color-mid);
+}
+
+.page-header__rule {
+    display: block;
+    width: 8rem;
+    height: 1px;
+    background: var(--color-hairline);
+}
+
+.page-header__title {
+    font-family: var(--font-serif), serif;
+    font-size: clamp(4rem, 10vw, 9rem);
+    font-weight: 300;
+    line-height: 0.9;
+    letter-spacing: -0.01em;
+    margin-bottom: 2rem;
+}
+
+.page-header__title em {
+    display: block;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--color-mid);
+    padding-left: clamp(2rem, 5vw, 7rem); /* Editorial offset */
+}
+
+.page-header__subtitle {
+    font-family: var(--font-sans), Arial, sans-serif;
+    font-size: clamp(0.78rem, 1.1vw, 0.92rem);
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    color: var(--color-mid);
+    line-height: 1.9;
+}
+
+/* Project count — positioned absolute */
+.page-header__index {
+    position: absolute;
+    bottom: 6rem;
+    right: var(--gutter);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.3rem;
+    z-index: 1;
+}
+
+.page-header__index span:first-child {
+    font-family: var(--font-serif), serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 300;
+    color: var(--color-hairline);
+    line-height: 1;
+}
+
+.page-header__index-label {
+    font-family: var(--font-sans), Arial, sans-serif;
+    font-size: 0.55rem;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-subtle);
+}
+
+
+/* ============================================================
+   6. FILTER NAV
+   ============================================================ */
+.filter {
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    background-color: var(--color-bg);
+    border-top: 1px solid var(--color-hairline);
+    border-bottom: 1px solid var(--color-hairline);
+    padding: 0 var(--gutter);
+    /* On scroll, navbar is above; filter sits just below it */
+    margin-top: 0;
+}
+
+.filter__inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.filter__inner::-webkit-scrollbar {
+    display: none;
+}
+
+.filter__btn {
+    font-family: var(--font-sans), Arial, sans-serif;
+    font-size: 0.6rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-subtle);
+    padding: 1.25rem 1.75rem 1.25rem 0;
+    white-space: nowrap;
+    position: relative;
+    transition: color var(--duration) var(--ease-out);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* Thin bottom-border indicator */
+.filter__btn::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--color-ink);
+    transition: width var(--duration) var(--ease-out);
+}
+
+.filter__btn:hover {
+    color: var(--color-ink);
+}
+
+.filter__btn:hover::after {
+    width: calc(100% - 1.75rem);
+}
+
+.filter__btn--active {
+    color: var(--color-ink);
+}
+
+.filter__btn--active::after {
+    width: calc(100% - 1.75rem);
+}
+
+
+/* ============================================================
+   7. PORTFOLIO GRID
+   ============================================================ */
+.portfolio {
+    padding: 0 var(--gutter) var(--space-2xl);
+    background-color: var(--color-bg);
+}
+
+/*
+  The grid is a 12-column base.
+  Rows are built with named classes that set spans:
+    pcard--hero    → full 12 cols
+    pcard--half    → 6 cols
+    pcard--wide    → 8 cols
+    pcard--narrow  → 4 cols
+    pcard--third   → 4 cols
+*/
+.portfolio__grid {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--grid-gap);
+    padding-top: var(--space-lg);
+}
+
+/* ---- Card base ---- */
+.pcard {
+    position: relative;
+    background: var(--color-surface);
+    transition: opacity 0.4s var(--ease-out),
+    transform 0.4s var(--ease-out);
+}
+
+.pcard--hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.97);
+    position: absolute;   /* pull it out of flow */
+    visibility: hidden;
+}
+
+/* Resets when shown again */
+.pcard--visible,
+.pcard:not(.pcard--hidden) {
+    position: relative;
+    visibility: visible;
+}
+
+.pcard__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* ---- Grid span variants ---- */
+.pcard--hero   { grid-column: span 12; }
+.pcard--half   { grid-column: span 6; }
+.pcard--wide   { grid-column: span 8; }
+.pcard--narrow { grid-column: span 4; }
+.pcard--third  { grid-column: span 4; }
+
+/* ---- Image wrap & aspect ratios ---- */
+.pcard__img-wrap {
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+}
+
+.pcard--hero   .pcard__img-wrap { aspect-ratio: 21/8; }
+.pcard--half   .pcard__img-wrap { aspect-ratio: 4/3; }
+.pcard--wide   .pcard__img-wrap { aspect-ratio: 16/9; }
+.pcard--narrow .pcard__img-wrap { aspect-ratio: 3/4; }
+.pcard--third  .pcard__img-wrap { aspect-ratio: 4/3; }
+
+.pcard__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s var(--ease-out),
+    filter 0.8s var(--ease-out);
+    will-change: transform;
+}
+
+.pcard__link:hover .pcard__img {
+    transform: scale(1.04);
+    filter: brightness(0.86);
+}
+
+/* ---- Overlay ---- */
+.pcard__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.75rem;
+    background: linear-gradient(to top, rgba(12,12,11,0.5) 0%, transparent 55%);
+    opacity: 0;
+    transition: opacity var(--duration) var(--ease-out);
+}
+
+.pcard__link:hover .pcard__overlay {
+    opacity: 1;
+}
+
+.pcard__overlay-cta {
+    font-family: var(--font-sans), Arial, sans-serif;
+    font-size: 0.6rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-white);
+    transform: translateY(6px);
+    transition: transform var(--duration) var(--ease-out);
+}
+
+.pcard__link:hover .pcard__overlay-cta {
+    transform: translateY(0);
+}
+
+/* ---- Card info ---- */
+.pcard__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--color-bg);
+    padding: 1.1rem var(--space-sm) 1.25rem;
+    border-top: 1px solid transparent;
+    transition: border-color var(--duration) var(--ease-out);
+}
+
+.pcard__link:hover .pcard__info {
+    border-top-color: var(--color-hairline);
+}
+
+.pcard__info-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.pcard__info-right {
+    flex-shrink: 0;
+    padding-top: 0.15rem;
+}
+
+.pcard__category {
+    font-family: var(--font-sans), Arial, sans-serif;
+    font-size: 0.55rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-subtle);
+}
+
+.pcard__title {
+    font-family: var(--font-serif), serif;
+    font-size: clamp(1rem, 1.6vw, 1.5rem);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--color-ink);
+    line-height: 1.2;
+}
+
+.pcard__desc {
+    font-family: var(--font-sans), Arial, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: var(--color-subtle);
+    line-height: 1.7;
+    max-width: 42rem;
+    margin-top: 0.2rem;
+}
+
+/* Hide desc on narrow cards to keep it clean */
+.pcard--narrow .pcard__desc,
+.pcard--third  .pcard__desc {
+    display: none;
+}
+
+.pcard__year {
+    font-family: var(--font-sans), Arial, sans-serif;
+    font-size: 0.55rem;
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    color: var(--color-subtle);
+}
+
+
+/* ============================================================
+   8. FOOTER  (identical to homepage)
+   ============================================================ */
+.footer {
+    padding: 2rem var(--gutter);
+    background-color: var(--color-bg);
+    border-top: 1px solid var(--color-hairline);
+}
+
+.footer__inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__copy {
+    font-family: var(--font-sans), Arial, sans-serif;
+    font-size: 0.575rem;
+    font-weight: 300;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-subtle);
+}
+
+
+/* ============================================================
+   9. RESPONSIVE — TABLET (max-width: 1024px)
+   ============================================================ */
+@media (max-width: 1024px) {
+
+    :root {
+        --space-xl:  4rem;
+        --space-2xl: 6rem;
+    }
+
+    /* Collapse to 6-column grid */
+    .portfolio__grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .pcard--hero   { grid-column: span 6; }
+    .pcard--half   { grid-column: span 3; }
+    .pcard--wide   { grid-column: span 4; }
+    .pcard--narrow { grid-column: span 2; }
+    .pcard--third  { grid-column: span 2; }
+
+    .pcard--hero   .pcard__img-wrap { aspect-ratio: 16/7; }
+
+    .page-header__index {
+        display: none;
+    }
+}
+
+
+/* ============================================================
+   10. RESPONSIVE — MOBILE (max-width: 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+
+    :root {
+        --space-xl:  3rem;
+        --space-2xl: 4.5rem;
+        --gutter:    1.5rem;
+    }
+
+    /* Navbar */
+    .navbar {
+        padding: 1.5rem var(--gutter);
+    }
+
+    .navbar__nav {
+        display: none;
+    }
+
+    .navbar__burger {
+        display: flex;
+    }
+
+    .navbar__mobile {
+        display: flex;
+    }
+
+    /* Page header */
+    .page-header {
+        padding-top: 14vh;
+        padding-bottom: 4rem;
+    }
+
+    .page-header::after {
+        display: none;
+    }
+
+    .page-header__title em {
+        padding-left: 1.5rem;
+    }
+
+    /* Filter */
+    .filter__btn {
+        padding-left: 0;
+        padding-right: 1.25rem;
+    }
+
+    /* Collapse all to single column */
+    .portfolio__grid {
+        grid-template-columns: 1fr;
+        gap: var(--grid-gap);
+    }
+
+    .pcard--hero,
+    .pcard--half,
+    .pcard--wide,
+    .pcard--narrow,
+    .pcard--third {
+        grid-column: span 1;
+    }
+
+    /* Uniform aspect ratio on mobile */
+    .pcard--hero   .pcard__img-wrap,
+    .pcard--half   .pcard__img-wrap,
+    .pcard--wide   .pcard__img-wrap,
+    .pcard--narrow .pcard__img-wrap,
+    .pcard--third  .pcard__img-wrap {
+        aspect-ratio: 4/3;
+    }
+
+    /* Show desc on all cards on mobile */
+    .pcard--narrow .pcard__desc,
+    .pcard--third  .pcard__desc {
+        display: block;
+    }
+
+    .footer__inner {
+        justify-content: flex-start;
+    }
+}
+
+
+/* ============================================================
+   11. RESPONSIVE — SMALL MOBILE (max-width: 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+
+    .page-header__title {
+        font-size: clamp(3.5rem, 16vw, 5rem);
+    }
+
+    .page-header__title em {
+        padding-left: 1rem;
+    }
+
+    .pcard__info {
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .pcard__year {
+        display: none;
+    }
+}
+
+
+/* ============================================================
+   12. REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+    }
+
+    .fade-in {
+        opacity: 1;
+        transform: none;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
