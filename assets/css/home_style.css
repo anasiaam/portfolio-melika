@@ -708,8 +708,9 @@ button {
     /* navbar__mobile is always display:flex — shown/hidden via opacity + visibility */
 
     .hero {
+        align-items: center;
+        padding-top: 3rem;
         padding-bottom: var(--space-md);
-        align-items: end;
     }
 
     .hero::after {
