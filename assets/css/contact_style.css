@@ -410,11 +410,20 @@ main {
 
 /* Arrow */
 .contact__link-arrow {
-    font-size: clamp(1rem, 1.5vw, 1.4rem);
-    color: var(--color-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     justify-self: end;
+    flex-shrink: 0;
+    color: var(--color-subtle);
     transition: transform var(--duration) var(--ease-out),
     color var(--duration) var(--ease-out);
+}
+
+.contact__link-arrow svg {
+    width: clamp(14px, 1.4vw, 20px);
+    height: clamp(14px, 1.4vw, 20px);
+    display: block;
 }
 
 .contact__link:hover .contact__link-arrow {

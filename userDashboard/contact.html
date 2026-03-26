@@ -62,7 +62,6 @@
                 <!-- Email row -->
                 <a href="mailto:melika.intel@gmail.com" class="contact__link" aria-label="Send Melika an email">
                     <div class="contact__link-label-wrap">
-                        <!-- Email SVG -->
                         <svg class="contact__link-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
                             <path d="M2 7l10 7 10-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -70,13 +69,16 @@
                         <span class="contact__link-label">Email</span>
                     </div>
                     <span class="contact__link-value">melika.intel@gmail.com</span>
-                    <span class="contact__link-arrow" aria-hidden="true">↗</span>
+                    <span class="contact__link-arrow" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
                 </a>
 
                 <!-- LinkedIn row -->
                 <a href="https://linkedin.com/in/melikahaghighat" class="contact__link contact__link--linkedin" target="_blank" rel="noopener noreferrer" aria-label="View Melika Haghighat's LinkedIn profile — opens in new tab">
                     <div class="contact__link-label-wrap">
-                        <!-- LinkedIn SVG -->
                         <svg class="contact__link-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
                             <path d="M7 10v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -89,7 +91,11 @@
                         Melika Haghighat
                         <span class="contact__link-badge">View Profile</span>
                     </span>
-                    <span class="contact__link-arrow" aria-hidden="true">↗</span>
+                    <span class="contact__link-arrow" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
                 </a>
 
             </div>
@@ -110,6 +116,7 @@
     (function () {
         'use strict';
 
+        // --- Navbar scroll ---
         const navbar = document.getElementById('navbar');
         let ticking = false;
         window.addEventListener('scroll', function () {
@@ -122,6 +129,7 @@
             }
         }, { passive: true });
 
+        // --- Mobile menu ---
         const burgerBtn = document.getElementById('burgerBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         burgerBtn.addEventListener('click', function () {
