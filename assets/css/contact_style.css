@@ -188,7 +188,6 @@ main {
 }
 
 .navbar__mobile {
-    display: none;
     position: fixed;
     inset: 0;
     background: var(--color-bg);
@@ -197,13 +196,17 @@ main {
     align-items: center;
     justify-content: center;
     gap: 3rem;
+    display: flex;
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
-    transition: opacity var(--duration) var(--ease-out);
+    transition: opacity var(--duration) var(--ease-out),
+    visibility var(--duration) var(--ease-out);
 }
 
 .navbar__mobile.navbar__mobile--open {
     opacity: 1;
+    visibility: visible;
     pointer-events: auto;
 }
 
@@ -492,10 +495,6 @@ main {
     }
 
     .navbar__burger {
-        display: flex;
-    }
-
-    .navbar__mobile {
         display: flex;
     }
 

@@ -255,8 +255,7 @@ button {
     transition: width var(--duration) var(--ease-out);
 }
 
-.navbar__link:hover::after,
-.navbar__link--active::after {
+.navbar__link:hover::after {
     width: 100%;
 }
 
@@ -290,7 +289,6 @@ button {
 
 /* Mobile menu */
 .navbar__mobile {
-    display: none;
     position: fixed;
     inset: 0;
     background: var(--color-bg);
@@ -299,13 +297,18 @@ button {
     align-items: center;
     justify-content: center;
     gap: 3rem;
+    /* Always display:flex — use opacity + visibility for the transition */
+    display: flex;
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
-    transition: opacity var(--duration) var(--ease-out);
+    transition: opacity var(--duration) var(--ease-out),
+    visibility var(--duration) var(--ease-out);
 }
 
 .navbar__mobile.navbar__mobile--open {
     opacity: 1;
+    visibility: visible;
     pointer-events: auto;
 }
 
@@ -702,14 +705,11 @@ button {
         display: flex;
     }
 
-    .navbar__mobile {
-        display: flex;
-    }
+    /* navbar__mobile is always display:flex — shown/hidden via opacity + visibility */
 
     .hero {
-        align-items: center;
-        padding-top: 3rem;
         padding-bottom: var(--space-md);
+        align-items: end;
     }
 
     .hero::after {
