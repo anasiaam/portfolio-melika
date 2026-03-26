@@ -56,7 +56,7 @@ html {
 body {
     background-color: var(--color-bg);
     color: var(--color-ink);
-    font-family: var(--font-sans), Arial, sans-serif;
+    font-family: var(--font-sans);
     font-weight: 300;
     line-height: 1.7;
     overflow-x: hidden;
@@ -95,7 +95,7 @@ button {
    ============================================================ */
 .section-label {
     display: inline-block;
-    font-family: var(--font-sans), Arial, sans-serif;
+    font-family: var(--font-sans);
     font-size: 0.625rem;
     font-weight: 400;
     letter-spacing: 0.22em;
@@ -108,7 +108,7 @@ button {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: var(--font-sans), Arial, sans-serif;
+    font-family: var(--font-sans);
     font-size: 0.75rem;
     font-weight: 400;
     letter-spacing: 0.16em;
@@ -208,13 +208,23 @@ button {
 }
 
 .navbar__logo {
-    font-family: var(--font-sans), Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-family: var(--font-sans);
     font-size: 0.65rem;
     font-weight: 400;
     letter-spacing: 0.28em;
     text-transform: uppercase;
     color: var(--color-ink);
     flex-shrink: 0;
+}
+
+.navbar__logo-img {
+    height: 26px;
+    width: auto;
+    display: block;
+    object-fit: contain;
 }
 
 .navbar__nav {
@@ -224,7 +234,7 @@ button {
 }
 
 .navbar__link {
-    font-family: var(--font-sans), Arial, sans-serif;
+    font-family: var(--font-sans);
     font-size: 0.65rem;
     font-weight: 400;
     letter-spacing: 0.18em;
@@ -245,11 +255,8 @@ button {
     transition: width var(--duration) var(--ease-out);
 }
 
+.navbar__link:hover::after,
 .navbar__link--active::after {
-    width: 100%;
-}
-
-.navbar__link:hover::after {
     width: 100%;
 }
 
@@ -303,7 +310,7 @@ button {
 }
 
 .navbar__mobile-link {
-    font-family: var(--font-serif), serif;
+    font-family: var(--font-serif);
     font-size: clamp(2.5rem, 8vw, 4.5rem);
     font-weight: 300;
     letter-spacing: 0.04em;
@@ -369,7 +376,7 @@ button {
 }
 
 .hero__tag {
-    font-family: var(--font-sans), Arial, sans-serif;
+    font-family: var(--font-sans);
     font-size: 0.6rem;
     font-weight: 400;
     letter-spacing: 0.24em;
@@ -387,7 +394,7 @@ button {
 }
 
 .hero__headline {
-    font-family: var(--font-serif), serif;
+    font-family: var(--font-serif);
     font-weight: 300;
     line-height: 0.88;
     letter-spacing: -0.01em;
@@ -411,7 +418,7 @@ button {
 }
 
 .hero__subtitle {
-    font-family: var(--font-sans), Arial, sans-serif;
+    font-family: var(--font-sans);
     font-size: clamp(0.8rem, 1.2vw, 0.95rem);
     font-weight: 300;
     letter-spacing: 0.04em;
@@ -459,7 +466,7 @@ button {
 }
 
 .hero__scroll-text {
-    font-family: var(--font-sans), Arial, sans-serif;
+    font-family: var(--font-sans);
     font-size: 0.55rem;
     font-weight: 400;
     letter-spacing: 0.2em;
@@ -486,7 +493,7 @@ button {
 }
 
 .work__title {
-    font-family: var(--font-serif), serif;
+    font-family: var(--font-serif);
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 300;
     line-height: 1.1;
@@ -563,7 +570,7 @@ button {
 }
 
 .work__overlay-text {
-    font-family: var(--font-sans), Arial, sans-serif;
+    font-family: var(--font-sans);
     font-size: 0.65rem;
     font-weight: 400;
     letter-spacing: 0.2em;
@@ -587,7 +594,7 @@ button {
 }
 
 .work__category {
-    font-family: var(--font-sans), Arial, sans-serif;
+    font-family: var(--font-sans);
     font-size: 0.575rem;
     font-weight: 400;
     letter-spacing: 0.2em;
@@ -596,7 +603,7 @@ button {
 }
 
 .work__name {
-    font-family: var(--font-serif), serif;
+    font-family: var(--font-serif);
     font-size: clamp(1.1rem, 2vw, 1.6rem);
     font-weight: 400;
     letter-spacing: 0.06em;
@@ -629,7 +636,7 @@ button {
 }
 
 .footer__copy {
-    font-family: var(--font-sans), Arial, sans-serif;
+    font-family: var(--font-sans);
     font-size: 0.575rem;
     font-weight: 300;
     letter-spacing: 0.14em;
@@ -682,6 +689,11 @@ button {
         padding: 1.5rem var(--gutter);
     }
 
+    /* Scale logo image down on mobile */
+    .navbar__logo-img {
+        height: 20px;
+    }
+
     .navbar__nav {
         display: none;
     }
@@ -695,16 +707,23 @@ button {
     }
 
     .hero {
+        align-items: center;
+        padding-top: 3rem;
         padding-bottom: var(--space-md);
-        align-items: end;
     }
 
     .hero::after {
         display: none;
     }
 
+    /* Reduce headline size so both words fit comfortably on screen */
+    .hero__headline-top,
     .hero__headline-mid {
-        padding-left: clamp(2rem, 6vw, 5rem);
+        font-size: clamp(3.5rem, 18vw, 7rem);
+    }
+
+    .hero__headline-mid {
+        padding-left: clamp(1.5rem, 5vw, 4rem);
     }
 
     .hero__scroll-indicator {
@@ -741,8 +760,18 @@ button {
    ============================================================ */
 @media (max-width: 480px) {
 
+    /* Hide logo image at very small sizes to save navbar space */
+    .navbar__logo-img {
+        display: none;
+    }
+
+    .hero__headline-top,
     .hero__headline-mid {
-        padding-left: 1.5rem;
+        font-size: clamp(3rem, 16vw, 5rem);
+    }
+
+    .hero__headline-mid {
+        padding-left: 1.25rem;
     }
 }
 
