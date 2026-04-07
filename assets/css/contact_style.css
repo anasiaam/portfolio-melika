@@ -7,11 +7,11 @@
    0. CUSTOM PROPERTIES
    ============================================================ */
 :root {
-    --color-bg:        #FAFAF8;
-    --color-ink:       #0C0C0B;
-    --color-mid:       #6B6B68;
-    --color-subtle:    #B8B7B4;
-    --color-hairline:  #E0DFD9;
+    --color-bg:        #FFFFFF;
+    --color-ink:       #000000;
+    --color-mid:       #555555;
+    --color-subtle:    #999999;
+    --color-hairline:  #D4D4D4;
 
     --font-serif:      'Cormorant Garamond', 'Times New Roman', serif;
     --font-sans:       'Jost', 'Helvetica Neue', Arial, sans-serif;
@@ -107,7 +107,6 @@ main {
     margin: 0 auto;
 }
 
-/* Logo — image + text side by side */
 .navbar__logo {
     display: flex;
     align-items: center;
@@ -122,7 +121,7 @@ main {
 }
 
 .navbar__logo-img {
-    height: 26px;
+    height: 36px;
     width: auto;
     display: block;
     object-fit: contain;

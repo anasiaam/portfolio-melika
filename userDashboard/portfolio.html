@@ -15,12 +15,7 @@
 <header class="navbar" id="navbar">
     <div class="navbar__inner">
         <a href="../index.html" class="navbar__logo">
-            <img
-                    src="../assets/images/logo.png"
-                    alt=""
-                    class="navbar__logo-img"
-                    aria-hidden="true"
-            />
+            <img src="../assets/images/logo.png" alt="" class="navbar__logo-img" aria-hidden="true" />
             MELIKA HAGHIGHAT
         </a>
         <nav class="navbar__nav" aria-label="Primary navigation">
@@ -30,8 +25,7 @@
             <a href="contact.html" class="navbar__link">Contact</a>
         </nav>
         <button class="navbar__burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
-            <span></span>
-            <span></span>
+            <span></span><span></span>
         </button>
     </div>
     <div class="navbar__mobile" id="mobileMenu" aria-hidden="true">
@@ -58,10 +52,6 @@
                 A collection of campaigns, identities,<br />and concepts built with intention.
             </p>
         </div>
-        <div class="page-header__index fade-in fade-in--delay-3" aria-hidden="true">
-            <span>12</span>
-            <span class="page-header__index-label">Projects</span>
-        </div>
     </section>
 
     <!-- ==================== FILTER NAV ==================== -->
@@ -70,7 +60,7 @@
             <button class="filter__btn filter__btn--active" data-filter="all">All</button>
             <button class="filter__btn" data-filter="digital">Digital Marketing</button>
             <button class="filter__btn" data-filter="social">Social Media</button>
-            <button class="filter__btn" data-filter="branding">Branding &amp; Creative</button>
+            <button class="filter__btn" data-filter="articles">Articles</button>
         </div>
     </nav>
 
@@ -78,319 +68,479 @@
     <section class="portfolio" aria-label="Portfolio projects">
         <div class="portfolio__grid">
 
-            <!-- ROW 1 — Digital Marketing (featured, full-width) -->
-            <article class="pcard pcard--hero reveal" data-category="digital">
-                <a href="#" class="pcard__link" aria-label="View NOOR Beauty Launch Campaign">
+            <!-- ============================================================
+                 ROW 1 — Wide + Narrow  |  Event / Printable Design (same row)
+                 pcard--row-event applies a shared fixed height to both cards.
+                 CHANGES: was pcard--hero; now pcard--wide pcard--row-event.
+                          Removed pcard__img--top (was anchoring to top).
+                 ============================================================ -->
+
+            <article class="pcard pcard--wide pcard--row-event reveal" data-category="digital">
+                <a href="#" class="pcard__link" aria-label="View Event / Printable Design">
                     <div class="pcard__img-wrap">
-                        <img
-                                src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=1400&q=80&auto=format&fit=crop"
-                                alt="NOOR Beauty — Digital launch campaign"
-                                class="pcard__img"
-                                loading="lazy"
-                        />
-                        <div class="pcard__overlay" aria-hidden="true">
-                            <span class="pcard__overlay-cta">View Project →</span>
-                        </div>
+                        <img src="../assets/images/portfolio_work/melika_nettbutikk.jpg.webp"
+                             alt="Event / Printable Design" class="pcard__img" loading="lazy" />
                     </div>
                     <div class="pcard__info">
                         <div class="pcard__info-left">
                             <span class="pcard__category">Digital Marketing</span>
-                            <h2 class="pcard__title">NOOR Beauty Launch</h2>
-                            <p class="pcard__desc">Full-funnel digital campaign across paid social, influencer &amp; email — 340% ROAS on launch month.</p>
-                        </div>
-                        <div class="pcard__info-right">
-                            <span class="pcard__year">2025</span>
+                            <h2 class="pcard__title">Event / Printable Design</h2>
                         </div>
                     </div>
                 </a>
             </article>
 
-            <!-- ROW 2 — two equal columns -->
+            <!-- CHANGE: was pcard--half pcard--insta; now pcard--narrow pcard--insta pcard--row-event -->
+            <article class="pcard pcard--narrow pcard--insta pcard--row-event reveal" data-category="digital">
+                <a href="#" class="pcard__link" aria-label="View Event / Printable Design">
+                    <div class="pcard__img-wrap">
+                        <img src="../assets/images/portfolio_work/IMG_8588.jpeg"
+                             alt="Event / Printable Design" class="pcard__img" loading="lazy" />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Digital Marketing</span>
+                            <h2 class="pcard__title">Event / Printable Design</h2>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- ============================================================
+                 ROW 2 — Third + Third + Third  |  LULULEMON
+                 All pcard--insta (aspect-ratio: 4/5) — naturally same height.
+                 ============================================================ -->
+
+            <article class="pcard pcard--third pcard--insta reveal" data-category="digital">
+                <a href="#" class="pcard__link" aria-label="View Lululemon campaign image 1">
+                    <div class="pcard__img-wrap">
+                        <img src="../assets/images/portfolio_work/lululemon_1.jpeg"
+                             alt="Lululemon — Promo campaign" class="pcard__img" loading="lazy" />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Digital Marketing</span>
+                            <h2 class="pcard__title">Lululemon</h2>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="pcard pcard--third pcard--insta reveal reveal--delay-1" data-category="digital">
+                <a href="#" class="pcard__link" aria-label="View Lululemon campaign image 2">
+                    <div class="pcard__img-wrap">
+                        <img src="../assets/images/portfolio_work/lululemon_2.jpeg"
+                             alt="Lululemon — Promo campaign" class="pcard__img" loading="lazy" />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Digital Marketing</span>
+                            <h2 class="pcard__title">Lululemon</h2>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="pcard pcard--third pcard--insta reveal reveal--delay-2" data-category="digital">
+                <a href="#" class="pcard__link" aria-label="View Lululemon campaign image 3">
+                    <div class="pcard__img-wrap">
+                        <img src="../assets/images/portfolio_work/lululemon_3.jpeg"
+                             alt="Lululemon — Promo campaign" class="pcard__img" loading="lazy" />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Digital Marketing</span>
+                            <h2 class="pcard__title">Lululemon</h2>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- ============================================================
+                 ROW 3 — Half + Half (Articles)
+                 ============================================================ -->
+
+            <article class="pcard pcard--half reveal" data-category="articles">
+                <a href="https://meravoslo.no/nyheter/palazzo-comunale-ny-siciliansk-perle-pa-lokka"
+                   class="pcard__link" target="_blank" rel="noopener noreferrer"
+                   aria-label="Read article: Palazzo Comunale">
+                    <div class="pcard__img-wrap">
+                        <img src="../assets/images/portfolio_work/article_img1.png"
+                             alt="Palazzo Comunale — Mer av Oslo article" class="pcard__img" loading="lazy" />
+                        <div class="pcard__overlay" aria-hidden="true">
+                            <span class="pcard__overlay-cta">Read Article →</span>
+                        </div>
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Articles — Mer av Oslo</span>
+                            <h2 class="pcard__title">Palazzo Comunale</h2>
+                            <p class="pcard__desc">Ny siciliansk perle på Løkka — autentiske smaker og vakre omgivelser langs Akerselva.</p>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="pcard pcard--half reveal reveal--delay-1" data-category="articles">
+                <a href="https://meravoslo.no/nyheter/chat-dor-dagskos-med-kaketaarn-eller-afternoon-tea"
+                   class="pcard__link" target="_blank" rel="noopener noreferrer"
+                   aria-label="Read article: Chat D'Or">
+                    <div class="pcard__img-wrap">
+                        <img src="../assets/images/portfolio_work/article_img2.png"
+                             alt="Chat D'Or — Mer av Oslo article" class="pcard__img" loading="lazy" />
+                        <div class="pcard__overlay" aria-hidden="true">
+                            <span class="pcard__overlay-cta">Read Article →</span>
+                        </div>
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Articles — Mer av Oslo</span>
+                            <h2 class="pcard__title">Chat D'Or</h2>
+                            <p class="pcard__desc">Dagskos med kaketårn eller afternoon tea — Frankrike midt i Oslo.</p>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- ============================================================
+                 ROW 4 — Half + Half (Social)
+                 ============================================================ -->
+
             <article class="pcard pcard--half reveal" data-category="social">
-                <a href="#" class="pcard__link" aria-label="View ATELIER SOL Social Media project">
+                <a href="#" class="pcard__link" aria-label="Social media project 1">
                     <div class="pcard__img-wrap">
-                        <img
-                                src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80&auto=format&fit=crop"
-                                alt="ATELIER SOL — Social media content"
-                                class="pcard__img"
-                                loading="lazy"
-                        />
-                        <div class="pcard__overlay" aria-hidden="true">
-                            <span class="pcard__overlay-cta">View Project →</span>
-                        </div>
+                        <img src="../assets/images/portfolio_personal/IMG_01.jpeg"
+                             alt="Social media content" class="pcard__img" loading="lazy" />
                     </div>
                     <div class="pcard__info">
                         <div class="pcard__info-left">
                             <span class="pcard__category">Social Media</span>
-                            <h2 class="pcard__title">ATELIER SOL</h2>
-                            <p class="pcard__desc">Instagram &amp; TikTok content strategy for a Parisian lifestyle brand. 2.1M organic reach in Q1.</p>
-                        </div>
-                        <div class="pcard__info-right">
-                            <span class="pcard__year">2025</span>
-                        </div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="pcard pcard--half reveal reveal--delay-1" data-category="branding">
-                <a href="#" class="pcard__link" aria-label="View VELA Skincare Brand Identity">
-                    <div class="pcard__img-wrap">
-                        <img
-                                src="https://images.unsplash.com/photo-1612817288484-6f916006741a?w=800&q=80&auto=format&fit=crop"
-                                alt="VELA Skincare — Brand identity"
-                                class="pcard__img"
-                                loading="lazy"
-                        />
-                        <div class="pcard__overlay" aria-hidden="true">
-                            <span class="pcard__overlay-cta">View Project →</span>
-                        </div>
-                    </div>
-                    <div class="pcard__info">
-                        <div class="pcard__info-left">
-                            <span class="pcard__category">Branding &amp; Creative</span>
-                            <h2 class="pcard__title">VELA Skincare</h2>
-                            <p class="pcard__desc">Complete brand identity system — logo, packaging direction, tone of voice &amp; visual language.</p>
-                        </div>
-                        <div class="pcard__info-right">
-                            <span class="pcard__year">2024</span>
-                        </div>
-                    </div>
-                </a>
-            </article>
-
-            <!-- ROW 3 — asymmetric: 2/3 + 1/3 -->
-            <article class="pcard pcard--wide reveal" data-category="digital">
-                <a href="#" class="pcard__link" aria-label="View FORMA Fashion paid media campaign">
-                    <div class="pcard__img-wrap">
-                        <img
-                                src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1100&q=80&auto=format&fit=crop"
-                                alt="FORMA — Paid media campaign"
-                                class="pcard__img"
-                                loading="lazy"
-                        />
-                        <div class="pcard__overlay" aria-hidden="true">
-                            <span class="pcard__overlay-cta">View Project →</span>
-                        </div>
-                    </div>
-                    <div class="pcard__info">
-                        <div class="pcard__info-left">
-                            <span class="pcard__category">Digital Marketing</span>
-                            <h2 class="pcard__title">FORMA — Paid Media</h2>
-                            <p class="pcard__desc">Meta &amp; Google Ads strategy for fashion SS25 drop. CTR 4.8% — 2× industry benchmark.</p>
-                        </div>
-                        <div class="pcard__info-right">
-                            <span class="pcard__year">2025</span>
-                        </div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="pcard pcard--narrow reveal reveal--delay-1" data-category="branding">
-                <a href="#" class="pcard__link" aria-label="View PERSONA Cards concept">
-                    <div class="pcard__img-wrap">
-                        <img
-                                src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=600&q=80&auto=format&fit=crop"
-                                alt="Persona Cards — Brand concept"
-                                class="pcard__img"
-                                loading="lazy"
-                        />
-                        <div class="pcard__overlay" aria-hidden="true">
-                            <span class="pcard__overlay-cta">View Project →</span>
-                        </div>
-                    </div>
-                    <div class="pcard__info">
-                        <div class="pcard__info-left">
-                            <span class="pcard__category">Branding &amp; Creative</span>
-                            <h2 class="pcard__title">Persona Cards</h2>
-                            <p class="pcard__desc">Audience persona card system for luxury brand workshops.</p>
-                        </div>
-                        <div class="pcard__info-right">
-                            <span class="pcard__year">2024</span>
-                        </div>
-                    </div>
-                </a>
-            </article>
-
-            <!-- ROW 4 — three equal columns -->
-            <article class="pcard pcard--third reveal" data-category="social">
-                <a href="#" class="pcard__link" aria-label="View MAISON ÉCLAT Instagram content">
-                    <div class="pcard__img-wrap">
-                        <img
-                                src="https://images.unsplash.com/photo-1524135220673-c731600a1a50?w=600&q=80&auto=format&fit=crop"
-                                alt="MAISON ÉCLAT — Instagram content"
-                                class="pcard__img"
-                                loading="lazy"
-                        />
-                        <div class="pcard__overlay" aria-hidden="true">
-                            <span class="pcard__overlay-cta">View Project →</span>
-                        </div>
-                    </div>
-                    <div class="pcard__info">
-                        <div class="pcard__info-left">
-                            <span class="pcard__category">Social Media</span>
-                            <h2 class="pcard__title">MAISON ÉCLAT</h2>
-                            <p class="pcard__desc">Monthly content calendar, art direction &amp; copy for fragrance brand.</p>
-                        </div>
-                        <div class="pcard__info-right">
-                            <span class="pcard__year">2024</span>
-                        </div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="pcard pcard--third reveal reveal--delay-1" data-category="branding">
-                <a href="#" class="pcard__link" aria-label="View STUDIO CLARO event concept">
-                    <div class="pcard__img-wrap">
-                        <img
-                                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80&auto=format&fit=crop"
-                                alt="STUDIO CLARO — Event concept"
-                                class="pcard__img"
-                                loading="lazy"
-                        />
-                        <div class="pcard__overlay" aria-hidden="true">
-                            <span class="pcard__overlay-cta">View Project →</span>
-                        </div>
-                    </div>
-                    <div class="pcard__info">
-                        <div class="pcard__info-left">
-                            <span class="pcard__category">Branding &amp; Creative</span>
-                            <h2 class="pcard__title">STUDIO CLARO Event</h2>
-                            <p class="pcard__desc">Concept &amp; creative direction for an intimate brand activation.</p>
-                        </div>
-                        <div class="pcard__info-right">
-                            <span class="pcard__year">2024</span>
-                        </div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="pcard pcard--third reveal reveal--delay-2" data-category="digital">
-                <a href="#" class="pcard__link" aria-label="View BLANC email marketing">
-                    <div class="pcard__img-wrap">
-                        <img
-                                src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=600&q=80&auto=format&fit=crop"
-                                alt="BLANC — Email marketing"
-                                class="pcard__img"
-                                loading="lazy"
-                        />
-                        <div class="pcard__overlay" aria-hidden="true">
-                            <span class="pcard__overlay-cta">View Project →</span>
-                        </div>
-                    </div>
-                    <div class="pcard__info">
-                        <div class="pcard__info-left">
-                            <span class="pcard__category">Digital Marketing</span>
-                            <h2 class="pcard__title">BLANC — Email</h2>
-                            <p class="pcard__desc">Retention email strategy. 58% open rate, 12% click-through.</p>
-                        </div>
-                        <div class="pcard__info-right">
-                            <span class="pcard__year">2024</span>
-                        </div>
-                    </div>
-                </a>
-            </article>
-
-            <!-- ROW 5 — asymmetric: 1/3 + 2/3 -->
-            <article class="pcard pcard--narrow reveal" data-category="social">
-                <a href="#" class="pcard__link" aria-label="View RÊVE TikTok Strategy">
-                    <div class="pcard__img-wrap">
-                        <img
-                                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80&auto=format&fit=crop"
-                                alt="RÊVE — TikTok strategy"
-                                class="pcard__img"
-                                loading="lazy"
-                        />
-                        <div class="pcard__overlay" aria-hidden="true">
-                            <span class="pcard__overlay-cta">View Project →</span>
-                        </div>
-                    </div>
-                    <div class="pcard__info">
-                        <div class="pcard__info-left">
-                            <span class="pcard__category">Social Media</span>
-                            <h2 class="pcard__title">RÊVE TikTok</h2>
-                            <p class="pcard__desc">0 to 80K followers in 90 days via short-form editorial content.</p>
-                        </div>
-                        <div class="pcard__info-right">
-                            <span class="pcard__year">2023</span>
-                        </div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="pcard pcard--wide reveal reveal--delay-1" data-category="branding">
-                <a href="#" class="pcard__link" aria-label="View LUMIÈRE Brand Rebrand">
-                    <div class="pcard__img-wrap">
-                        <img
-                                src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1100&q=80&auto=format&fit=crop"
-                                alt="LUMIÈRE — Brand rebrand"
-                                class="pcard__img"
-                                loading="lazy"
-                        />
-                        <div class="pcard__overlay" aria-hidden="true">
-                            <span class="pcard__overlay-cta">View Project →</span>
-                        </div>
-                    </div>
-                    <div class="pcard__info">
-                        <div class="pcard__info-left">
-                            <span class="pcard__category">Branding &amp; Creative</span>
-                            <h2 class="pcard__title">LUMIÈRE Rebrand</h2>
-                            <p class="pcard__desc">Full repositioning of a mid-tier fashion label into the contemporary luxury space — identity, messaging &amp; campaign.</p>
-                        </div>
-                        <div class="pcard__info-right">
-                            <span class="pcard__year">2023</span>
-                        </div>
-                    </div>
-                </a>
-            </article>
-
-            <!-- ROW 6 — two equal columns -->
-            <article class="pcard pcard--half reveal" data-category="digital">
-                <a href="#" class="pcard__link" aria-label="View SOLÈNE SEO and Content Strategy">
-                    <div class="pcard__img-wrap">
-                        <img
-                                src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&q=80&auto=format&fit=crop"
-                                alt="SOLÈNE — SEO and content strategy"
-                                class="pcard__img"
-                                loading="lazy"
-                        />
-                        <div class="pcard__overlay" aria-hidden="true">
-                            <span class="pcard__overlay-cta">View Project →</span>
-                        </div>
-                    </div>
-                    <div class="pcard__info">
-                        <div class="pcard__info-left">
-                            <span class="pcard__category">Digital Marketing</span>
-                            <h2 class="pcard__title">SOLÈNE — SEO &amp; Content</h2>
-                            <p class="pcard__desc">Organic growth strategy. 220% increase in search traffic over 6 months.</p>
-                        </div>
-                        <div class="pcard__info-right">
-                            <span class="pcard__year">2023</span>
+                            <h2 class="pcard__title">Content Creation</h2>
                         </div>
                     </div>
                 </a>
             </article>
 
             <article class="pcard pcard--half reveal reveal--delay-1" data-category="social">
-                <a href="#" class="pcard__link" aria-label="View NOIR Social Campaign">
+                <a href="#" class="pcard__link" aria-label="Social media project 2">
                     <div class="pcard__img-wrap">
-                        <img
-                                src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=80&auto=format&fit=crop"
-                                alt="NOIR — Social campaign"
-                                class="pcard__img"
-                                loading="lazy"
-                        />
-                        <div class="pcard__overlay" aria-hidden="true">
-                            <span class="pcard__overlay-cta">View Project →</span>
-                        </div>
+                        <img src="../assets/images/portfolio_personal/IMG_02.jpeg"
+                             alt="Social media content" class="pcard__img" loading="lazy" />
                     </div>
                     <div class="pcard__info">
                         <div class="pcard__info-left">
                             <span class="pcard__category">Social Media</span>
-                            <h2 class="pcard__title">NOIR Campaign</h2>
-                            <p class="pcard__desc">Cross-platform campaign for luxury menswear. UGC strategy &amp; community management.</p>
+                            <h2 class="pcard__title">Content Creation</h2>
                         </div>
-                        <div class="pcard__info-right">
-                            <span class="pcard__year">2023</span>
+                    </div>
+                </a>
+            </article>
+
+            <!-- ============================================================
+                 ROW 5 — Narrow + Wide (Social)
+                 ============================================================ -->
+
+            <article class="pcard pcard--narrow reveal" data-category="social">
+                <a href="#" class="pcard__link" aria-label="Social media project 3">
+                    <div class="pcard__img-wrap">
+                        <img src="../assets/images/portfolio_personal/IMG_03.jpeg"
+                             alt="Social media content" class="pcard__img" loading="lazy" />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Social Media</span>
+                            <h2 class="pcard__title">Short-Form Video</h2>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="pcard pcard--wide reveal reveal--delay-1" data-category="social">
+                <a href="#" class="pcard__link" aria-label="Social media project 4">
+                    <div class="pcard__img-wrap">
+                        <img src="../assets/images/portfolio_personal/IMG_04.jpeg"
+                             alt="Social media content" class="pcard__img" loading="lazy" />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Social Media</span>
+                            <h2 class="pcard__title">Short-Form Video</h2>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- ============================================================
+                 ROW 6 — Half (Article)
+                 ============================================================ -->
+
+            <article class="pcard pcard--half reveal" data-category="articles">
+                <a href="https://meravoslo.no/nyheter/the-little-pickle-billig-michelin-lunsj"
+                   class="pcard__link" target="_blank" rel="noopener noreferrer"
+                   aria-label="Read article: The Little Pickle">
+                    <div class="pcard__img-wrap">
+                        <img src="../assets/images/portfolio_work/article_img3.png"
+                             alt="The Little Pickle — Mer av Oslo article" class="pcard__img" loading="lazy" />
+                        <div class="pcard__overlay" aria-hidden="true">
+                            <span class="pcard__overlay-cta">Read Article →</span>
+                        </div>
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Articles — Mer av Oslo</span>
+                            <h2 class="pcard__title">The Little Pickle</h2>
+                            <p class="pcard__desc">Billig Michelin-lunsj — kvalitet uten den store prislappen.</p>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- ============================================================
+                 ROW 7 — Wide + Narrow  |  PLENTITUDE standalone photos
+                 ============================================================ -->
+
+            <article class="pcard pcard--wide reveal" data-category="digital">
+                <a href="#" class="pcard__link" aria-label="View Plentitude Strategy photo 1">
+                    <div class="pcard__img-wrap">
+                        <img src="../assets/images/portfolio_work/PL_quote.png"
+                             alt="Plentitude Strategy — Flow Concept" class="pcard__img" loading="lazy" />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Digital Marketing</span>
+                            <h2 class="pcard__title">Plentitude Strategy</h2>
+                            <p class="pcard__desc">Flow Concept — brand strategy and visual identity direction.</p>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="pcard pcard--narrow reveal reveal--delay-1" data-category="digital">
+                <a href="#" class="pcard__link" aria-label="View Plentitude Strategy photo 2">
+                    <div class="pcard__img-wrap">
+                        <img src="../assets/images/portfolio_work/PL_company_manifesto.png"
+                             alt="Plentitude — Flow Concept" class="pcard__img" loading="lazy" />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Digital Marketing</span>
+                            <h2 class="pcard__title">Flow Concept</h2>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- ============================================================
+                 ROW 8 — Half + Half  |  PLENTITUDE CAROUSELS
+                 ============================================================ -->
+
+            <!-- Carousel A — 6 slides -->
+            <article class="pcard pcard--half reveal" data-category="digital">
+                <a href="#" class="pcard__link" aria-label="View Plentitude carousel gallery 1"
+                   onclick="return false;">
+                    <div class="pcard__img-wrap">
+                        <div class="carousel" data-carousel aria-label="Plentitude gallery, 6 images">
+                            <div class="carousel__track">
+                                <img src="../assets/images/portfolio_work/gallery1_1.jpeg"
+                                     alt="Plentitude — image 1 of 6" class="carousel__slide" loading="lazy" />
+                                <img src="../assets/images/portfolio_work/gallery1_2.jpeg"
+                                     alt="Plentitude — image 2 of 6" class="carousel__slide" loading="lazy" />
+                                <img src="../assets/images/portfolio_work/gallery1_3.jpeg"
+                                     alt="Plentitude — image 3 of 6" class="carousel__slide" loading="lazy" />
+                                <img src="../assets/images/portfolio_work/gallery1_4.jpeg"
+                                     alt="Plentitude — image 4 of 6" class="carousel__slide" loading="lazy" />
+                                <img src="../assets/images/portfolio_work/gallery1_5.jpeg"
+                                     alt="Plentitude — image 5 of 6" class="carousel__slide" loading="lazy" />
+                                <img src="../assets/images/portfolio_work/gallery1_6.jpeg"
+                                     alt="Plentitude — image 6 of 6" class="carousel__slide" loading="lazy" />
+                            </div>
+                            <button class="carousel__btn carousel__btn--prev" aria-label="Previous image"></button>
+                            <button class="carousel__btn carousel__btn--next" aria-label="Next image"></button>
+                            <span class="carousel__counter">1 / 6</span>
+                            <div class="carousel__dots">
+                                <button class="carousel__dot carousel__dot--active" aria-label="Slide 1"></button>
+                                <button class="carousel__dot" aria-label="Slide 2"></button>
+                                <button class="carousel__dot" aria-label="Slide 3"></button>
+                                <button class="carousel__dot" aria-label="Slide 4"></button>
+                                <button class="carousel__dot" aria-label="Slide 5"></button>
+                                <button class="carousel__dot" aria-label="Slide 6"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Digital Marketing</span>
+                            <h2 class="pcard__title">Plentitude — Gallery I</h2>
+                            <p class="pcard__desc">Strategy and concept visuals — 6-image series.</p>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Carousel B — 7 slides -->
+            <article class="pcard pcard--half reveal reveal--delay-1" data-category="digital">
+                <a href="#" class="pcard__link" aria-label="View Plentitude carousel gallery 2"
+                   onclick="return false;">
+                    <div class="pcard__img-wrap">
+                        <div class="carousel" data-carousel aria-label="Plentitude gallery, 7 images">
+                            <div class="carousel__track">
+                                <img src="../assets/images/portfolio_work/gallery2_1.png"
+                                     alt="Plentitude — image 1 of 7" class="carousel__slide" loading="lazy" />
+                                <img src="../assets/images/portfolio_work/gallery2_2.png"
+                                     alt="Plentitude — image 2 of 7" class="carousel__slide" loading="lazy" />
+                                <img src="../assets/images/portfolio_work/gallery2_3.png"
+                                     alt="Plentitude — image 3 of 7" class="carousel__slide" loading="lazy" />
+                                <img src="../assets/images/portfolio_work/gallery2_4.png"
+                                     alt="Plentitude — image 4 of 7" class="carousel__slide" loading="lazy" />
+                                <img src="../assets/images/portfolio_work/gallery2_5.png"
+                                     alt="Plentitude — image 5 of 7" class="carousel__slide" loading="lazy" />
+                                <img src="../assets/images/portfolio_work/gallery2_6.png"
+                                     alt="Plentitude — image 6 of 7" class="carousel__slide" loading="lazy" />
+                                <img src="../assets/images/portfolio_work/gallery2_7.png"
+                                     alt="Plentitude — image 7 of 7" class="carousel__slide" loading="lazy" />
+                            </div>
+                            <button class="carousel__btn carousel__btn--prev" aria-label="Previous image"></button>
+                            <button class="carousel__btn carousel__btn--next" aria-label="Next image"></button>
+                            <span class="carousel__counter">1 / 7</span>
+                            <div class="carousel__dots">
+                                <button class="carousel__dot carousel__dot--active" aria-label="Slide 1"></button>
+                                <button class="carousel__dot" aria-label="Slide 2"></button>
+                                <button class="carousel__dot" aria-label="Slide 3"></button>
+                                <button class="carousel__dot" aria-label="Slide 4"></button>
+                                <button class="carousel__dot" aria-label="Slide 5"></button>
+                                <button class="carousel__dot" aria-label="Slide 6"></button>
+                                <button class="carousel__dot" aria-label="Slide 7"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Digital Marketing</span>
+                            <h2 class="pcard__title">Plentitude — Gallery II</h2>
+                            <p class="pcard__desc">Flow Concept execution — 7-image series.</p>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- ============================================================
+                 ROW 9 — Third + Third + Third (Social)
+                 ============================================================ -->
+
+            <article class="pcard pcard--third reveal" data-category="social">
+                <a href="#" class="pcard__link" aria-label="Social media project 5">
+                    <div class="pcard__img-wrap">
+                        <img src="../assets/images/portfolio_personal/IMG_05.JPG"
+                             alt="Social media content" class="pcard__img" loading="lazy" />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Social Media</span>
+                            <h2 class="pcard__title">Instagram Content</h2>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="pcard pcard--third reveal reveal--delay-1" data-category="social">
+                <a href="#" class="pcard__link" aria-label="Social media project 6">
+                    <div class="pcard__img-wrap">
+                        <img src="../assets/images/portfolio_personal/IMG_06.jpeg"
+                             alt="Social media content" class="pcard__img" loading="lazy" />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Social Media</span>
+                            <h2 class="pcard__title">Instagram Content</h2>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="pcard pcard--third reveal reveal--delay-2" data-category="social">
+                <a href="#" class="pcard__link" aria-label="Social media project 7">
+                    <div class="pcard__img-wrap">
+                        <img src="../assets/images/portfolio_personal/IMG_07.jpeg"
+                             alt="Social media content" class="pcard__img" loading="lazy" />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Social Media</span>
+                            <h2 class="pcard__title">Instagram Content</h2>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- ============================================================
+                 ROW 10 — Wide + Narrow (Social)
+                 ============================================================ -->
+
+            <article class="pcard pcard--wide reveal" data-category="social">
+                <a href="#" class="pcard__link" aria-label="Social media project 8">
+                    <div class="pcard__img-wrap">
+                        <img src="../assets/images/portfolio_personal/IMG_08.jpeg"
+                             alt="Social media content" class="pcard__img" loading="lazy" />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Social Media</span>
+                            <h2 class="pcard__title">TikTok Content</h2>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="pcard pcard--narrow reveal reveal--delay-1" data-category="social">
+                <a href="#" class="pcard__link" aria-label="Social media project 9">
+                    <div class="pcard__img-wrap">
+                        <img src="../assets/images/portfolio_personal/IMG_11.jpeg"
+                             alt="Social media content" class="pcard__img" loading="lazy" />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Social Media</span>
+                            <h2 class="pcard__title">TikTok Content</h2>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- ============================================================
+                 ROW 11 — Half + Half  |  Article + Social (closing row)
+                 ============================================================ -->
+
+            <article class="pcard pcard--half reveal" data-category="articles">
+                <a href="https://meravoslo.no/nyheter/sommerro-helaften-med-wine-dine-crime"
+                   class="pcard__link" target="_blank" rel="noopener noreferrer"
+                   aria-label="Read article: Sommerro">
+                    <div class="pcard__img-wrap">
+                        <img src="../assets/images/portfolio_work/article_img4.png"
+                             alt="Sommerro — Mer av Oslo article" class="pcard__img" loading="lazy" />
+                        <div class="pcard__overlay" aria-hidden="true">
+                            <span class="pcard__overlay-cta">Read Article →</span>
+                        </div>
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Articles — Mer av Oslo</span>
+                            <h2 class="pcard__title">Sommerro</h2>
+                            <p class="pcard__desc">Helaften med Wine &amp; Dine Crime — en unik opplevelse i historiske omgivelser.</p>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="pcard pcard--half reveal reveal--delay-1" data-category="social">
+                <a href="#" class="pcard__link" aria-label="Social media project 10">
+                    <div class="pcard__img-wrap">
+                        <img src="../assets/images/portfolio_personal/IMG_10.jpeg"
+                             alt="Social media content" class="pcard__img" loading="lazy" />
+                    </div>
+                    <div class="pcard__info">
+                        <div class="pcard__info-left">
+                            <span class="pcard__category">Social Media</span>
+                            <h2 class="pcard__title">Content Strategy</h2>
                         </div>
                     </div>
                 </a>
@@ -412,7 +562,7 @@
     (function () {
         'use strict';
 
-        // --- Navbar scroll ---
+        /* ---- Navbar scroll ---- */
         const navbar = document.getElementById('navbar');
         let ticking = false;
         window.addEventListener('scroll', function () {
@@ -425,9 +575,10 @@
             }
         }, { passive: true });
 
-        // --- Mobile menu ---
-        const burgerBtn = document.getElementById('burgerBtn');
+        /* ---- Mobile menu ---- */
+        const burgerBtn  = document.getElementById('burgerBtn');
         const mobileMenu = document.getElementById('mobileMenu');
+
         burgerBtn.addEventListener('click', function () {
             const isOpen = mobileMenu.classList.toggle('navbar__mobile--open');
             burgerBtn.setAttribute('aria-expanded', isOpen);
@@ -446,33 +597,27 @@
             });
         });
 
-        // --- Filter ---
+        /* ---- Filter ---- */
         const filterBtns = document.querySelectorAll('.filter__btn');
-        const cards = document.querySelectorAll('.pcard');
+        const cards      = document.querySelectorAll('.pcard');
 
         filterBtns.forEach(function (btn) {
             btn.addEventListener('click', function () {
                 const filter = btn.getAttribute('data-filter');
-
-                // Update active button
                 filterBtns.forEach(function (b) { b.classList.remove('filter__btn--active'); });
                 btn.classList.add('filter__btn--active');
-
-                // Show/hide cards
                 cards.forEach(function (card) {
                     const match = filter === 'all' || card.getAttribute('data-category') === filter;
                     if (match) {
                         card.classList.remove('pcard--hidden');
-                        card.classList.add('pcard--visible');
                     } else {
                         card.classList.add('pcard--hidden');
-                        card.classList.remove('pcard--visible');
                     }
                 });
             });
         });
 
-        // --- Scroll reveal ---
+        /* ---- Scroll reveal ---- */
         const revealEls = document.querySelectorAll('.reveal');
         if ('IntersectionObserver' in window) {
             const observer = new IntersectionObserver(function (entries) {
@@ -487,6 +632,72 @@
         } else {
             revealEls.forEach(function (el) { el.classList.add('revealed'); });
         }
+
+        /* ---- Carousels ---- */
+        document.querySelectorAll('[data-carousel]').forEach(function (carousel) {
+            const track   = carousel.querySelector('.carousel__track');
+            const slides  = carousel.querySelectorAll('.carousel__slide');
+            const dots    = carousel.querySelectorAll('.carousel__dot');
+            const prevBtn = carousel.querySelector('.carousel__btn--prev');
+            const nextBtn = carousel.querySelector('.carousel__btn--next');
+            const counter = carousel.querySelector('.carousel__counter');
+            const total   = slides.length;
+            let current   = 0;
+
+            function goTo(index) {
+                current = (index + total) % total;
+                track.style.transform = 'translateX(-' + (current * 100) + '%)';
+                dots.forEach(function (d, i) {
+                    d.classList.toggle('carousel__dot--active', i === current);
+                });
+                if (counter) {
+                    counter.textContent = (current + 1) + ' / ' + total;
+                }
+            }
+
+            prevBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                goTo(current - 1);
+            });
+
+            nextBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                goTo(current + 1);
+            });
+
+            dots.forEach(function (dot, i) {
+                dot.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    goTo(i);
+                });
+            });
+
+            var touchStartX = 0;
+            var touchEndX   = 0;
+
+            carousel.addEventListener('touchstart', function (e) {
+                touchStartX = e.changedTouches[0].clientX;
+            }, { passive: true });
+
+            carousel.addEventListener('touchend', function (e) {
+                touchEndX = e.changedTouches[0].clientX;
+                var diff  = touchStartX - touchEndX;
+                if (Math.abs(diff) > 40) {
+                    goTo(diff > 0 ? current + 1 : current - 1);
+                }
+            }, { passive: true });
+
+            carousel.setAttribute('tabindex', '0');
+            carousel.addEventListener('keydown', function (e) {
+                if (e.key === 'ArrowLeft')  { e.preventDefault(); goTo(current - 1); }
+                if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); }
+            });
+
+            goTo(0);
+        });
 
     })();
 </script>

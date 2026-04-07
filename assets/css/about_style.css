@@ -8,13 +8,13 @@
    0. CUSTOM PROPERTIES
    ============================================================ */
 :root {
-    --color-bg:        #FAFAF8;
-    --color-surface:   #F2F1EF;
-    --color-ink:       #0C0C0B;
-    --color-mid:       #6B6B68;
-    --color-subtle:    #B8B7B4;
-    --color-hairline:  #E0DFD9;
-    --color-white:     #FFFFFF;
+    --color-bg:        #FFFFFF;
+    --color-surface:   #ECECEC;
+    --color-ink:       #000000;
+    --color-mid:       #555555;
+    --color-subtle:    #999999;
+    --color-hairline:  #D4D4D4;
+    --color-white:     #F7F7F7;
 
     --font-serif:      'Cormorant Garamond', 'Times New Roman', serif;
     --font-sans:       'Jost', 'Helvetica Neue', Arial, sans-serif;
@@ -164,7 +164,6 @@ button {
     margin: 0 auto;
 }
 
-/* Logo — now contains an image + text, so we use flex */
 .navbar__logo {
     display: flex;
     align-items: center;
@@ -179,11 +178,10 @@ button {
 }
 
 .navbar__logo-img {
-    height: 26px;
+    height: 36px;
     width: auto;
     display: block;
     object-fit: contain;
-    /* Keep the logo crisp — no filter needed, should match ink */
 }
 
 .navbar__nav {

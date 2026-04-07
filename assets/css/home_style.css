@@ -8,13 +8,13 @@
    ============================================================ */
 :root {
     /* Colors */
-    --color-bg:        #FAFAF8;
-    --color-surface:   #F2F1EF;
-    --color-ink:       #0C0C0B;
-    --color-mid:       #6B6B68;
-    --color-subtle:    #B8B7B4;
-    --color-hairline:  #E0DFD9;
-    --color-white:     #FFFFFF;
+    --color-bg:        #FFFFFF;
+    --color-surface:   #ECECEC;
+    --color-ink:       #000000;
+    --color-mid:       #555555;
+    --color-subtle:    #999999;
+    --color-hairline:  #D4D4D4;
+    --color-white:     #F7F7F7;
 
     /* Typography */
     --font-serif:      'Cormorant Garamond', 'Times New Roman', serif;
@@ -221,7 +221,7 @@ button {
 }
 
 .navbar__logo-img {
-    height: 26px;
+    height: 36px;
     width: auto;
     display: block;
     object-fit: contain;
@@ -526,7 +526,7 @@ button {
 
 .work__item {
     position: relative;
-    background: var(--color-surface);
+    background: var(--color-ink);
 }
 
 .work__item-link {
